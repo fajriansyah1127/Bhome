@@ -35,11 +35,12 @@
                     <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
                         <div class="info-box bg-green hover-expand-effect hover-zoom-effect">
                             <div class="icon">
+                                <a href="{{ route('keuangan.index') }}">
                                 <i class="material-icons">paid</i>
                             </div>
                             <div class="content">
                                 <div class="text">JUMLAH TERBAYAR</div>
-                                <div class="number count-to" data-from="0" data-to="1128637500" data-speed="1500"
+                                <div class="number count-to" data-from="0" data-to={{$total_nilai_lunas}} data-speed="1500"
                                     data-fresh-interval="20">Rp.</div>
                             </div>
                         </div>

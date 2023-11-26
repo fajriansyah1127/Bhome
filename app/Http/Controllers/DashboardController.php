@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Dashboard;
 use App\Models\Datarumah;
+use App\Models\Keuangan;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
@@ -14,9 +15,10 @@ class DashboardController extends Controller
     public function index()
     {
         $lokasiData = Datarumah::get();
+        $total_nilai_lunas = Keuangan::sum('nilai_sudah_bayar'); 
         // $lokasi = Datarumah::get('pdam');
         // dd($lokasiData); // Ini akan mencetak data ke konsol
-        return view('dashboard.index',compact('lokasiData'));
+        return view('dashboard.index',compact('lokasiData','total_nilai_lunas'));
     }
 
     /**
