@@ -99,7 +99,7 @@ class DataRumahController extends Controller
     public function show($id)
     {
         // Ganti 'Datarumah' dengan model yang sesuai
-        $data_rumah = Datarumah::with('user', 'type')
+        $data_rumah = Datarumah::with('pengajuan', 'type')
             ->find($id);
     
         // Pastikan data rumah ditemukan sebelum melanjutkan
