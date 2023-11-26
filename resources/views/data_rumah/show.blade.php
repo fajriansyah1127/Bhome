@@ -29,7 +29,7 @@
                             </ul>
                         </div>
                         <div class="body">
-                            <img src="{{ asset('foto_rumah2') }}/5"
+                            <img src="{{ asset('foto_rumah2') }}/{{ $data_rumah->foto }}">
                                 class="js-animating-object img-responsive">
                             <div class="demo-image-copyright">
                                 This image taken from <a href="{{ asset('foto_rumah2') }}/{{ $data_rumah->foto }}" target="_blank">Unsplash</a>
