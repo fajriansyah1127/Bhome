@@ -48,7 +48,7 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach ($data_rumah_penghuni as $data)
+                                            @foreach ($data_rumah_penghuni_keuangan as $data)
                                                 <tr>
                                                     <td> {{ $data->nama }}</td>
                                                     <td>{{$data->alamat}}</td>
