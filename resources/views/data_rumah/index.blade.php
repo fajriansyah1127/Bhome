@@ -40,16 +40,48 @@
                                         class="table table-bordered table-striped table-hover js-basic-example dataTable">
                                         <thead>
                                             <tr>
-                                                <th>Kode Rumah</th>
                                                 <th>Penghuni</th>
                                                 <th>Alamat</th>
-                                                <th>Type</th>
-                                                <th>Jatuh Tempo</th>
+                                                <th>Perusahaan</th>
+                                                <th>Status</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
+                                            @foreach ($data_rumah_penghuni as $data)
+                                                <tr>
+                                                    <td> {{ $data->nama }}</td>
+                                                    <td>{{$data->alamat}}</td>
+                                                    <td>{{$data->perusahaan}}</td>
+                                                    <td>{{$data->status}}</td>
+                                                    <td>
+                                                        <div class="btn-group">
+                                                            <button type="button" class="btn btn-primary dropdown-toggle"
+                                                                data-toggle="dropdown" aria-haspopup="true"
+                                                                aria-expanded="false">
+                                                                ACTION <span class="caret"></span>
+                                                            </button>
+                                                            <ul class="dropdown-menu">
+                                                                <li> <button type="button"
+                                                                        class="btn btn-default waves-effect m-r-20"
+                                                                        onclick="window.open('{{ route('data_rumah.show', 1) }}', '_blank')">Detail</button>
+                                                                </li>
+                                                                <li> <button type="button"
+                                                                        class="btn btn-default waves-effect m-r-20"
+                                                                        onclick="window.open('{{ route('type_rumah.edit', 1) }}', '_blank')">Edit</button>
+                                                                </li>
+                                                                <li>
+                                                                    <button type="button"
+                                                                        class="btn btn-default waves-effect m-r-20"
+                                                                        data-toggle="modal"
+                                                                        data-target="#destroytyperumah">Delete</button>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            @endforeach
+                                            {{-- <tr>
                                                 <td>Fax01</td>
                                                 <td>AMIRUDIN AHMAD</td>
                                                 <td>Jl. Faximile No. 01</td>
@@ -144,7 +176,7 @@
                                                         </ul>
                                                     </div>
                                                 </td>
-                                            </tr>
+                                            </tr> --}}
                                         </tbody>
                                     </table>
                                 </div>
@@ -189,8 +221,8 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                @foreach ($data_rumah as $data)
+                                            @foreach ($data_rumah as $data)
+                                            {{-- <tr>
                                                     <td>{{ $data->kode_rumah }}</td>
                                                     <td>
                                                         @if ($data->type)
@@ -227,7 +259,7 @@
                                                             </ul>
                                                         </div>
                                                     </td>
-                                            </tr>
+                                            </tr> --}}
             @endforeach
             {{-- <tr>
                 <td>Dgt01</td>
@@ -265,8 +297,8 @@
                         </h2>
                         <ul class="header-dropdown m-r--5">
                             <li class="dropdown">
-                                <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown"
-                                    role="button" aria-haspopup="true" aria-expanded="false">
+                                <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                    aria-haspopup="true" aria-expanded="false">
                                     <i class="material-icons">more_vert</i>
                                 </a>
                                 <ul class="dropdown-menu pull-right">

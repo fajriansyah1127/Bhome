@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Datarumah;
+use App\Models\Keuangan;
 use App\Models\Type;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -18,9 +19,7 @@ class DataRumahController extends Controller
     {
         $type_rumah = Type::get();
         $data_rumah = Datarumah::with('type')->get();
-        $data_rumah_penghuni = Datarumah::with('type')
-        ->where('pengajuan_id', null)
-        ->get();
+        $data_rumah_penghuni = Keuangan::get();
         return view('data_rumah.index', compact('type_rumah','data_rumah','data_rumah_penghuni'));
     }
 
